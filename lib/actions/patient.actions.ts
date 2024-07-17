@@ -10,11 +10,14 @@ export const createUser = async (user: CreateUserParams) => {
       undefined,
       user.name
     );
+    console.log("New user created successfully::", newUser);
+    return newUser;
   } catch (error: any) {
     if (error && error?.code === 409) {
       const documents = await users.list([Query.equal("email", user.email)]);
-
+      console.log("Error 409::", error);
       return documents.users[0];
     }
+    console.log("Error while creating user::", error);
   }
 };
