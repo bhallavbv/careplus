@@ -6,13 +6,12 @@ import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import { Form, FormControl } from "@/components/ui/form";
-import CustomFormField from "../CustomFormField";
+import CustomFormField, { FormFieldType } from "../CustomFormField";
 import SubmitButton from "../SubmitButton";
 import React, { useState } from "react";
 import { UserFormValidation } from "@/lib/validation";
 import { useRouter } from "next/navigation";
 import { createUser } from "@/lib/actions/patient.actions";
-import { FormFieldType } from "./PatientForm";
 import { fields } from "@hookform/resolvers/ajv/src/__tests__/__fixtures__/data.js";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { GenderOptions } from "@/constants";
