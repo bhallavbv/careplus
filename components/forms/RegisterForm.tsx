@@ -17,14 +17,14 @@ import {
   IdentificationTypes,
   PatientFormDefaultValues,
 } from "@/constants";
-import { registerPatient } from "@/lib/actions/patient.actions";
+// import { registerPatient } from "@/lib/actions/patient.actions";
 import { PatientFormValidation } from "@/lib/validation";
 
 import "react-datepicker/dist/react-datepicker.css";
 import "react-phone-number-input/style.css";
 import CustomFormField, { FormFieldType } from "../CustomFormField";
-import { FileUploader } from "../FileUploader";
 import SubmitButton from "../SubmitButton";
+import FileUploader from "../FileUploader";
 
 const RegisterForm = ({ user }: { user: User }) => {
   const router = useRouter();
@@ -85,11 +85,11 @@ const RegisterForm = ({ user }: { user: User }) => {
         privacyConsent: values.privacyConsent,
       };
 
-      const newPatient = await registerPatient(patient);
+      // const newPatient = await registerPatient(patient);
 
-      if (newPatient) {
-        router.push(`/patients/${user.$id}/new-appointment`);
-      }
+      // if (newPatient) {
+      //   router.push(`/patients/${user.$id}/new-appointment`);
+      // }
     } catch (error) {
       console.log(error);
     }
@@ -333,7 +333,7 @@ const RegisterForm = ({ user }: { user: User }) => {
             placeholder="123456789"
           />
 
-          {/* <CustomFormField
+          <CustomFormField
             fieldType={FormFieldType.SKELETON}
             control={form.control}
             name="identificationDocument"
@@ -343,7 +343,7 @@ const RegisterForm = ({ user }: { user: User }) => {
                 <FileUploader files={field.value} onChange={field.onChange} />
               </FormControl>
             )}
-          /> */}
+          />
         </section>
 
         <section className="space-y-6">
