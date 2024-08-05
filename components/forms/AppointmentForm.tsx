@@ -16,6 +16,7 @@ import { Doctors } from "@/constants";
 import { SelectItem } from "../ui/select";
 import Image from "next/image";
 import { Appointment } from "@/types/appwrite.types";
+import { createAppointment } from "@/lib/actions/appointment.actions";
 
 const AppointmentForm = ({
   userId,
@@ -76,14 +77,14 @@ const AppointmentForm = ({
           note: values.note,
         };
 
-        // const newAppointment = await createAppointment(appointment);
+        const newAppointment = await createAppointment(appointment);
 
-        // if (newAppointment) {
-        //   form.reset();
-        //   router.push(
-        //     `/patients/${userId}/new-appointment/success?appointmentId=${newAppointment.$id}`
-        //   );
-        // }
+        if (newAppointment) {
+          form.reset();
+          router.push(
+            `/patients/${userId}/new-appointment/success?appointmentId=${newAppointment.$id}`
+          );
+        }
       } else {
         const appointmentToUpdate = {
           userId,
