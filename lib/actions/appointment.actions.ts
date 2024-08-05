@@ -20,3 +20,20 @@ export const createAppointment = async (
     console.error("An error occurred while creating a new appointment:", error);
   }
 };
+
+export const getAppointment = async (appointmentId: string) => {
+  try {
+    const appointment = await databases.getDocument(
+      process.env.NEXT_PUBLIC_DATABASE_ID!,
+      process.env.NEXT_PUBLIC_APPOINTMENT_COLLECTION_ID!,
+      appointmentId
+    );
+    console.log("Fetched appoinment details successfully::", appointment);
+    return parseStringify(appointment);
+  } catch (error) {
+    console.error(
+      "An error occurred while fetching appointment details:",
+      error
+    );
+  }
+};
