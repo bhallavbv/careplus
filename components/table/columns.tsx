@@ -6,9 +6,8 @@ import Image from "next/image";
 import { Doctors } from "@/constants";
 import { formatDateTime } from "@/lib/utils";
 import { Appointment } from "@/types/appwrite.types";
-
-// import { AppointmentModal } from "../AppointmentModal";
-// import { StatusBadge } from "../StatusBadge";
+import { StatusBadge } from "../StatusBadge";
+import { AppointmentModal } from "../AppointmentModal";
 
 export const columns: ColumnDef<Appointment>[] = [
   {
@@ -32,7 +31,7 @@ export const columns: ColumnDef<Appointment>[] = [
       const appointment = row.original;
       return (
         <div className="min-w-[115px]">
-          {/* <StatusBadge status={appointment.status} /> */}
+          <StatusBadge status={appointment.status} />
         </div>
       );
     },
@@ -81,7 +80,7 @@ export const columns: ColumnDef<Appointment>[] = [
 
       return (
         <div className="flex gap-1">
-          {/* <AppointmentModal
+          <AppointmentModal
             patientId={appointment.patient.$id}
             userId={appointment.userId}
             appointment={appointment}
@@ -96,7 +95,7 @@ export const columns: ColumnDef<Appointment>[] = [
             type="cancel"
             title="Cancel Appointment"
             description="Are you sure you want to cancel your appointment?"
-          /> */}
+          />
         </div>
       );
     },
