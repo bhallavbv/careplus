@@ -3,10 +3,13 @@ import PatientForm from "@/components/forms/PatientForm";
 import { Button } from "@/components/ui/button";
 import { getPatient } from "@/lib/actions/patient.actions";
 import Image from "next/image";
-import Link from "next/link";
+
+import * as Sentry from "@sentry/nextjs";
 
 const Appointment = async ({ params: { userId } }: SearchParamProps) => {
   const patient = await getPatient(userId);
+
+  Sentry.metrics.set("user_view_new-appointment", patient.name);
 
   return (
     <div className="flex h-screen max-h-screen">
