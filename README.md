@@ -11,7 +11,7 @@ Admin can view appointments, schedule or cancel appointments as per doctor avail
 ![Patient Login](https://github.com/user-attachments/assets/f988140c-0daf-4cf1-bd62-b53768fe7275)
 
 ![Patient Register 1](https://github.com/user-attachments/assets/30f4c4e0-0ce5-4134-acbd-4cd001d3a7e8)
-![Patient Register 2](https://github.com/user-attachments/assets/0d09e1f3-c12b-49aa-a49c-7ded8ed4b879)
+![Patient Register 2](https://github.com/user-attachments/assets/11ecc672-caa2-4d68-a139-427b334fb551)
 ![Patient Register 3](https://github.com/user-attachments/assets/58f52cd5-d303-45f7-b602-550a212b12e7)
 
 ![New Appointment](https://github.com/user-attachments/assets/79646c90-f08e-4b23-b65b-905010110358)
